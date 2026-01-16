@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia del Perú y del Mundo | Plataforma Educativa</title>
+  <style>
+    :root{
+      --primary:#8b0000;
+      --dark:#1e1e1e;
+      --bg:#f4f6f8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Segoe UI',Arial,sans-serif;
+      background:var(--bg);
+      color:#333;
+    }
+    header{
+      background:linear-gradient(135deg,#8b0000,#b22222);
+      color:white;
+      padding:50px 20px;
+      text-align:center;
+    }
+    nav{
+      background:var(--dark);
+      padding:12px;
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+    nav a{color:white;text-decoration:none;font-weight:600}
+    nav a:hover{text-decoration:underline}
+    .container{max-width:1200px;margin:30px auto;padding:0 20px}
+    .search{margin-bottom:30px;text-align:center}
+    .search input{
+      width:100%;max-width:520px;padding:14px;
+      border-radius:10px;border:1px solid #ccc;font-size:16px
+    }
+    .section{
+      background:white;padding:30px;margin-bottom:35px;
+      border-radius:15px;box-shadow:0 6px 18px rgba(0,0,0,.1)
+    }
+    .section h2{color:var(--primary);border-left:6px solid var(--primary);padding-left:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:25px}
+    .card{
+      background:#fafafa;padding:18px;border-radius:12px;
+      cursor:pointer;transition:.25s
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 10px 20px rgba(0,0,0,.15)}
+    footer{background:var(--dark);color:#ccc;text-align:center;padding:25px;margin-top:40px}
+
+    /* MODAL */
+    .modal{
+      display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,.7);z-index:1000;overflow:auto
+    }
+    .modal-content{
+      background:white;max-width:900px;margin:40px auto;padding:30px;
+      border-radius:15px;animation:fadeIn .3s
+    }
+    .close{float:right;font-size:28px;cursor:pointer;color:#8b0000}
+    @keyframes fadeIn{from{opacity:0;transform:scale(.95)}to{opacity:1}}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Historia del Perú y del Mundo</h1>
+  <p>Plataforma educativa completa | Información detallada, clara y piola 😎</p>
+</header>
+
+<nav>
+  <a href="#peru">Perú</a>
+  <a href="#mundo">Universal</a>
+</nav>
+
+<nav style="background:#333;">
+  <a href="#peru">Perú</a>
+  <a href="#mundo">Universal</a>
+  <a href="#examen">Modo Examen</a>
+  <a href="#timeline">Línea de Tiempo</a>
+</nav>
+
+<div class="container">
+
+  <div class="section" id="examen">
+    <h2>📝 Modo Examen (Perú + Universal)</h2>
+    <p>Responde las siguientes preguntas tipo admisión. Al final revisa tus respuestas.</p>
+    <ol>
+      <li>¿Cuál fue la base económica del Imperio Inca?<br>
+        <input type="radio" name="p1"> Comercio<br>
+        <input type="radio" name="p1"> Minería<br>
+        <input type="radio" name="p1"> Agricultura<br>
+        <input type="radio" name="p1"> Ganadería
+      </li><br>
+      <li>¿Qué civilización se desarrolló a orillas del río Nilo?<br>
+        <input type="radio" name="p2"> Mesopotamia<br>
+        <input type="radio" name="p2"> Grecia<br>
+        <input type="radio" name="p2"> Egipto<br>
+        <input type="radio" name="p2"> Roma
+      </li>
+    </ol>
+    <p><b>Respuestas correctas:</b> 1) Agricultura – 2) Egipto</p>
+  </div>
+
+  <div class="section" id="timeline">
+    <h2>🕒 Línea de Tiempo General</h2>
+    <ul>
+      <li><b>3000 a.C.</b> – Civilización Caral</li>
+      <li><b>1200 a.C.</b> – Cultura Chavín</li>
+      <li><b>1200 d.C.</b> – Imperio Inca</li>
+      <li><b>1532</b> – Conquista del Perú</li>
+      <li><b>1821</b> – Independencia del Perú</li>
+      <li><b>1914</b> – Primera Guerra Mundial</li>
+      <li><b>1939</b> – Segunda Guerra Mundial</li>
+    </ul>
+  </div>
+
+  <div class="search">
+    <input id="search" placeholder="🔎 Busca cualquier tema histórico..." onkeyup="filterTopics()">
+  </div>
+
+  <div class="section" id="peru">
+    <h2>🇵🇪 Historia del Perú</h2>
+    <div class="grid">
+      <div class="card">Poblamiento de América</div>
+      <div class="card">Primeros pobladores del Perú</div>
+      <div class="card">Caral</div>
+      <div class="card">Chavín</div>
+      <div class="card">Paracas</div>
+      <div class="card">Nazca</div>
+      <div class="card">Moche</div>
+      <div class="card">Wari</div>
+      <div class="card">Chimú</div>
+      <div class="card">Los Incas</div>
+      <div class="card">Conquista del Perú</div>
+      <div class="card">Virreinato del Perú</div>
+      <div class="card">Emancipación</div>
+      <div class="card">Guerra del Pacífico</div>
+      <div class="card">Perú Contemporáneo</div>
+    </div>
+  </div>
+
+  <div class="section" id="mundo">
+    <h2>🌍 Historia Universal</h2>
+    <div class="grid">
+      <div class="card">Prehistoria</div>
+      <div class="card">Egipto Antiguo</div>
+      <div class="card">Mesopotamia</div>
+      <div class="card">Grecia Antigua</div>
+      <div class="card">Roma Antigua</div>
+      <div class="card">Edad Media</div>
+      <div class="card">Renacimiento</div>
+      <div class="card">Revolución Francesa</div>
+      <div class="card">Revolución Industrial</div>
+      <div class="card">Primera Guerra Mundial</div>
+      <div class="card">Segunda Guerra Mundial</div>
+      <div class="card">Guerra Fría</div>
+      <div class="card">Globalización</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 | Plataforma Educativa de Historia – Hecha para estudiar en serio</p>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+const info = {
+
+"Poblamiento de América": `
+<h2>Poblamiento de América</h2>
+<h3>📌 Proceso histórico</h3>
+<p>El poblamiento de América estudia el proceso mediante el cual los primeros grupos humanos llegaron y se asentaron en el continente americano durante el periodo Pleistoceno. Este proceso ocurrió hace más de 15 000 años y estuvo condicionado por cambios climáticos, glaciaciones y adaptaciones culturales.</p>
+<h3>🧠 Principales teorías</h3>
+<ul>
+<li><b>Teoría Asiática (Alex Hrdlicka):</b> Migración por el estrecho de Bering.</li>
+<li><b>Teoría Oceánica (Paul Rivet):</b> Migraciones desde Oceanía por el Pacífico.</li>
+<li><b>Teoría Australiana (Mendes Correa):</b> Desplazamiento desde Australia.</li>
+</ul>
+<h3>⚡ Importancia</h3>
+<p>Explica el origen de las culturas americanas y la diversidad étnica del continente.</p>`,
+
+"Primeros pobladores del Perú": `
+<h2>Primeros Pobladores del Perú</h2>
+<p>Los primeros habitantes del territorio peruano fueron grupos nómades dedicados a la caza, pesca y recolección. Se asentaron principalmente en la costa, sierra y selva.</p>
+<h3>🗺️ Principales restos arqueológicos</h3>
+<ul>
+<li>Pacaicasa</li>
+<li>Toquepala</li>
+<li>Lauricocha</li>
+<li>Paiján</li>
+</ul>
+<h3>🏹 Características</h3>
+<p>Uso de herramientas líticas, organización en bandas y adaptación al medio.</p>`,
+
+"Caral": `
+<h2>Civilización Caral</h2>
+<p>Caral (3000 a.C.) es la civilización más antigua de América. Se desarrolló en el valle de Supe y presentó una compleja organización social.</p>
+<h3>🏛️ Aportes</h3>
+<ul>
+<li>Arquitectura monumental</li>
+<li>Centros ceremoniales</li>
+<li>Economía basada en agricultura y pesca</li>
+</ul>
+<h3>📌 Importancia histórica</h3>
+<p>Demuestra que América desarrolló civilizaciones de manera autónoma.</p>`,
+
+"Chavín": `
+<h2>Cultura Chavín</h2>
+<p>Se desarrolló entre 1200 y 200 a.C. Fue una cultura religiosa con centro en Chavín de Huántar.</p>
+<h3>🗿 Características</h3>
+<ul>
+<li>Arquitectura en piedra</li>
+<li>Arte lítico y cerámica</li>
+<li>Religión teocrática</li>
+</ul>`,
+
+"Paracas": `
+<h2>Cultura Paracas</h2>
+<p>Destacó por sus textiles, prácticas funerarias y conocimientos médicos como la trepanación craneana.</p>`,
+
+"Nazca": `
+<h2>Cultura Nazca</h2>
+<p>Conocida por las Líneas de Nazca y su avanzada ingeniería hidráulica.</p>`,
+
+"Moche": `
+<h2>Cultura Moche</h2>
+<p>Se desarrolló en la costa norte. Destacó por su cerámica realista y organización militar.</p>`,
+
+"Wari": `
+<h2>Cultura Wari</h2>
+<p>Primer imperio andino. Implementó una administración centralizada y red vial.</p>`,
+
+"Chimú": `
+<h2>Cultura Chimú</h2>
+<p>Capital Chan Chan. Expertos en metalurgia y arquitectura en adobe.</p>`,
+
+"Los Incas": `
+<h2>Imperio Inca (Tahuantinsuyo)</h2>
+<h3>🏛️ Política</h3>
+<p>Estado centralizado dirigido por el Sapa Inca.</p>
+<h3>👥 Sociedad</h3>
+<p>Organizada en ayllus, con clases sociales definidas.</p>
+<h3>🌾 Economía</h3>
+<p>Agricultura, ganadería y redistribución estatal.</p>
+<h3>📉 Caída</h3>
+<p>Guerra civil y conquista española.</p>`,
+
+"Conquista del Perú": `
+<h2>Conquista del Perú</h2>
+<p>Proceso iniciado en 1532 con la llegada de Pizarro. Incluyó alianzas indígenas y resistencia nativa.</p>`,
+
+"Virreinato del Perú": `
+<h2>Virreinato del Perú</h2>
+<p>Periodo colonial (1542–1821). Economía minera y sociedad estamental.</p>`,
+
+"Emancipación": `
+<h2>Emancipación del Perú</h2>
+<p>Proceso independentista influenciado por ideas ilustradas y movimientos externos.</p>`,
+
+"Guerra del Pacífico": `
+<h2>Guerra del Pacífico</h2>
+<p>Conflicto (1879–1883) con causas económicas y graves consecuencias para el Perú.</p>`,
+
+"Perú Contemporáneo": `
+<h2>Perú Contemporáneo</h2>
+<p>Incluye el siglo XX y XXI: gobiernos militares, democracia y globalización.</p>`,
+
+"Prehistoria": `
+<h2>Prehistoria</h2>
+<p>Periodo anterior a la escritura. Paleolítico, Mesolítico y Neolítico.</p>`,
+
+"Egipto Antiguo": `
+<h2>Egipto Antiguo</h2>
+<p>Civilización fluvial del Nilo. Faraón, religión y pirámides.</p>`,
+
+"Mesopotamia": `
+<h2>Mesopotamia</h2>
+<p>Cuna de la escritura y las primeras leyes.</p>`,
+
+"Grecia Antigua": `
+<h2>Grecia Antigua</h2>
+<p>Democracia, filosofía y cultura occidental.</p>`,
+
+"Roma Antigua": `
+<h2>Roma Antigua</h2>
+<p>República e Imperio. Derecho romano y expansión territorial.</p>`,
+
+"Edad Media": `
+<h2>Edad Media</h2>
+<p>Feudalismo, Iglesia y crisis del siglo XIV.</p>`,
+
+"Renacimiento": `
+<h2>Renacimiento</h2>
+<p>Movimiento cultural que revalorizó el arte y la ciencia.</p>`,
+
+"Revolución Francesa": `
+<h2>Revolución Francesa</h2>
+<p>Fin del absolutismo y nacimiento de los derechos ciudadanos.</p>`,
+
+"Revolución Industrial": `
+<h2>Revolución Industrial</h2>
+<p>Cambio económico y tecnológico iniciado en Inglaterra.</p>`,
+
+"Primera Guerra Mundial": `
+<h2>Primera Guerra Mundial</h2>
+<p>Conflicto global (1914–1918).</p>`,
+
+"Segunda Guerra Mundial": `
+<h2>Segunda Guerra Mundial</h2>
+<p>Conflicto global (1939–1945).</p>`,
+
+"Guerra Fría": `
+<h2>Guerra Fría</h2>
+<p>Enfrentamiento ideológico entre EE.UU. y la URSS.</p>`,
+
+"Globalización": `
+<h2>Globalización</h2>
+<p>Interconexión económica, política y cultural del mundo actual.</p>`
+};
+
+function filterTopics(){
+  const t=document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(c=>{
+    c.style.display=c.textContent.toLowerCase().includes(t)?'block':'none';
+  })
+}
+
+document.querySelectorAll('.card').forEach(c=>{
+  c.onclick=()=>{
+    document.getElementById('modal-body').innerHTML = info[c.textContent] || `<h2>${c.textContent}</h2><p>Contenido detallado en expansión. Este tema incluirá explicación completa, procesos históricos, causas, consecuencias y personajes clave.</p>`;
+    document.getElementById('modal').style.display='block';
+  }
+})
+function closeModal(){document.getElementById('modal').style.display='none'}
+</script>
+
+</body>
+</html>
